@@ -1,0 +1,14 @@
+#!/bin/bash
+
+filename=$1
+if [ -f "$filename" ]; then
+	echo -e "error: filename already exiats"
+	unset filename
+	return
+else
+	echo -e "#!bin/bash\n" > "$filename"
+	nano +3,0 "$filename"
+	unset filename
+	return
+fi
+
