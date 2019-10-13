@@ -17,7 +17,7 @@ elif [ "$1" == '-x' ] || [ "$1" == '--executable' ]; then
 		unset filename
 		exit
 	else
-		echo -e "#/!bin/bash\n" > "$filename"
+		echo -e "#!/usr/bin/env python3\n" > "$filename"
 		if [ "$1" == '-x' ]; then
 			chmod u+x "$filename"
 		fi
@@ -48,7 +48,7 @@ else
 		unset filename
 		exit
 	else
-		echo -e "#!/bin/bash\n" > "$filename"
+		echo -e "#!/usr/bin/env python3\n" > "$filename"
 		nano +3,0 "$filename"
 		unset filename
 		exit
